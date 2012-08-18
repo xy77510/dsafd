@@ -9,7 +9,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:textSize="30dp"/>
+        android:textSize="30dp"
+        android:textColor="#003399"/>
 
     <TextView
         android:id="@+id/infosummaryTextView"
@@ -17,6 +18,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/infoTitleTextView"
-        android:layout_marginLeft="26dp" />
+        android:layout_marginLeft="26dp" 
+        android:textColor="#003399"/>
 
 </RelativeLayout>

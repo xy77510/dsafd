@@ -12,6 +12,8 @@ package com.codestorm.medicine;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import com.codestorm.medicine.db.FileOperate;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -52,7 +54,7 @@ public class StrongerActivity extends Activity
 				default:
 					break;
 				}
-			}
+			}		
 			
 		};
 		TimerTask timerTask=new TimerTask()
@@ -67,7 +69,6 @@ public class StrongerActivity extends Activity
 			}
 		};
 		timer=new Timer(true);
-		timer.schedule(timerTask, 2000);
-		
+		timer.schedule(timerTask, 2000);		
 	}
 }

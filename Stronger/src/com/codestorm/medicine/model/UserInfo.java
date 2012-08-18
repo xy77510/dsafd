@@ -10,9 +10,12 @@
 
 package com.codestorm.medicine.model;
 
+import java.io.Serializable;
 
-public class UserInfo
+
+public class UserInfo implements Serializable
 {
+	private static final long serialVersionUID = 7842127532109787107L;
 	public String userName;//”√ªß√˚
 	public String userPassword;//√‹¬Î
 	public String mail;//” œ‰
@@ -32,5 +35,9 @@ public class UserInfo
 			userInfo=new UserInfo();
 		}
 		return userInfo;
+	}
+	public static synchronized void setUserInfo(UserInfo ui){
+		if(ui!=null)
+			userInfo=ui;
 	}
 }

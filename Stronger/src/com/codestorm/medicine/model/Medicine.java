@@ -8,7 +8,7 @@ package com.codestorm.medicine.model;
 public class Medicine
 {
 	public String name; // 药品名
-	public String ID;//药品ID
+	public int ID;//药品ID
 	public String introduction;//药品介绍
 	public String diseases;//疾病
 	public String taboos;//禁忌
@@ -16,7 +16,7 @@ public class Medicine
 	public String promotion;//促销信息
 
 	// 构造函数
-	public Medicine(String medicalname,String id,String introduct,String disease,String taboo,String manufactur,String promotion)
+	public Medicine(String medicalname,int id,String introduct,String disease,String taboo,String manufactur,String promotion)
 	{
 		name = medicalname;
 		ID=id;

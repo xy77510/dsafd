@@ -67,7 +67,7 @@ public class MedRegActivity extends Activity implements OnClickListener
 			break;
 		case R.id.testButton:
 			// TODO:这里是体检入口
-			intent.setClass(this, ExamChooseActivity.class);
+			intent.setClass(this, ExaminationActivity.class);
 			startActivity(intent);
 			break;
 		default:

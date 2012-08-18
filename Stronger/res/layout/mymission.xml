@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:background="#66CCFF" >
+
+    <Button
+        android:id="@+id/missonButton"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="37dp"
+        android:layout_marginRight="29dp"
+         android:textColor="@drawable/textdrawble"
+android:background="@drawable/btndrawable"
+        android:text="@string/missionover"
+        android:textSize="20dp" />
 
     <TextView
         android:id="@+id/missionTextView"
@@ -9,18 +23,21 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="28dp"
-        android:layout_marginTop="34dp"
-        android:textSize="20dp"/>
+        android:layout_marginLeft="29dp"
+        android:layout_marginTop="84dp"
+        android:text="@string/loading"
+        android:textColor="#003399"
+        android:textSize="20dp" />
 
-    <Button
-        android:id="@+id/missonButton"
+    <TextView
+        android:id="@+id/mtitleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginBottom="37dp"
-        android:layout_marginRight="29dp"
-        android:text="@string/missionover" />
+        android:layout_alignLeft="@+id/missionTextView"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="28dp"
+        android:text="@string/loading"
+        android:textColor="#003399"
+        android:textSize="35dp" />
 
 </RelativeLayout>

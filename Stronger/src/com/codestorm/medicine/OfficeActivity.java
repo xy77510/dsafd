@@ -36,7 +36,7 @@ public class OfficeActivity extends Activity
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
 		setContentView(R.layout.listview);
-		ListView listView = (ListView) findViewById(R.id.listView);
+		ListView listView = (ListView) findViewById(R.id.ListView);
 		ArrayList<HashMap<String, Object>> maps = new ArrayList<HashMap<String, Object>>();
 		// TODO:获取科室列表
 		for (Office office : tempOffice.getHashMap().get(com.codestorm.medicine.MedRegActivity.choice))

@@ -1,109 +1,158 @@
 package com.codestorm.medicine;
 
+/*
+ * 	郑泽	
+ * 	2012-7-24
+ * 	个人中心界面
+ * 
+ * */
+import com.codestorm.medicine.db.DataManage;
+import com.codestorm.medicine.db.FileOperate;
+import com.codestorm.medicine.model.HealthInfo;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class PersonCenter extends Activity implements OnClickListener
 {
-	Button mMyMissionButton;
-	Button mUserInfoButton;
+	Button mInformationButton;
+	Button mMyPushButton;
 	Button mPublicSpaceButton;
-	Button mNewsButton;
-	Button mAssistantButton;
-	Button mHeathcenterButton;
-	Button mDrugstoreButton;
+	Button mMyWantButton;
+	Button mHealthCenterButton;
+	Button mPersonalAssistantButton;
 	Intent intent;
+	HealthInfo healthInfo = HealthInfo.getHealthInfo();
+	DataManage dataManage;
 
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState)
 	{
+
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-		setContentView(R.layout.center);
-
-		mMyMissionButton = (Button) findViewById(R.id.myMissionButton);
-		mMyMissionButton.setOnClickListener(this);
-		mUserInfoButton = (Button) findViewById(R.id.userinfoButton);
-		mUserInfoButton.setOnClickListener(this);
-		mPublicSpaceButton = (Button) findViewById(R.id.publicspaceButton);
+		setContentView(R.layout.personcenter);
+		mInformationButton = (Button) findViewById(R.id.informationButton);
+		mInformationButton.setOnClickListener(this);
+		mMyPushButton = (Button) findViewById(R.id.myPushButton);
+		mMyPushButton.setOnClickListener(this);
+		mPublicSpaceButton = (Button) findViewById(R.id.publicSpaceButton);
 		mPublicSpaceButton.setOnClickListener(this);
-		mNewsButton = (Button) findViewById(R.id.newsButton);
-		mNewsButton.setOnClickListener(this);
-		mAssistantButton = (Button) findViewById(R.id.assistantButton);
-		mAssistantButton.setOnClickListener(this);
-		mHeathcenterButton = (Button) findViewById(R.id.heathcenterButton);
-		mHeathcenterButton.setOnClickListener(this);
-		mDrugstoreButton = (Button) findViewById(R.id.drugstoreButton);
-		mDrugstoreButton.setOnClickListener(this);
-
+		mMyWantButton = (Button) findViewById(R.id.myWantButton);
+		mMyWantButton.setOnClickListener(this);
+		mHealthCenterButton = (Button) findViewById(R.id.healthCenterButton);
+		mHealthCenterButton.setOnClickListener(this);
+		mPersonalAssistantButton = (Button) findViewById(R.id.personalAssistantButton);
+		mPersonalAssistantButton.setOnClickListener(this);
+		dataManage=DataManage.getDataManage(this);
+		FileOperate.readHealthInfo(this);
 	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu)
+	{
+		menu.add(0, 0, 0, "退出");
+		menu.add(0, 1, 0, "设置");
+		return true;
+	}
+
+	public boolean onOptionsItemSelected(MenuItem item)
+	{
+		int id = item.getItemId();
+		switch (id)
+		{
+		case 0:
+			finish();
+			break;
+		case 1:
+			intent = new Intent();
+			intent.setClass(this, OptionActivity.class);
+			startActivity(intent);
+			break;
+		default:
+			break;
+		}
+		return true;
+	}
+
 
 	public void onClick(View v)
 	{
 		// 按钮点击事件
 		switch (v.getId())
 		{
-		case R.id.myMissionButton:
+		case R.id.informationButton:
 		{
-			// TODO:查看体质
-			intent = new Intent();
-			intent.setClass(this, MyMissionActivity.class);
-			startActivity(intent);
-		}
-			break;
-		case R.id.userinfoButton:
-		{
-			//TODO:查看个人信息
-			intent=new Intent();
-			intent.setClass(this, UserInfoActivity.class);
-			startActivity(intent);
-		}
-			break;
-		case R.id.publicspaceButton:
-		{
-			//TODO:查看药品记录
-		}
-			break;
-		case R.id.newsButton:
-		{
-			//TODO:进入新闻中心
+			// TODO:查看资讯
 			intent = new Intent();
 			intent.setClass(this, InformationActivity.class);
 			startActivity(intent);
 		}
 			break;
-		case R.id.assistantButton:
+		case R.id.myPushButton:
 		{
-			// TODO:进入私人助理
+			// TODO:查看我的推送
+			intent = new Intent();
+			intent.setClass(this, MyPushActivity.class);
+			startActivity(intent);
 		}
 			break;
-		case R.id.heathcenterButton:
+		case R.id.publicSpaceButton:
 		{
-			// 进入健康中心
+			// TODO:查看公共空间
+			intent = new Intent();
+			intent.setClass(this, MyCommentary.class);
+			startActivity(intent);
+		}
+			break;
+		case R.id.myWantButton:
+		{
+			// TODO:进入我的定制
+			intent = new Intent();
+		}
+			break;
+		case R.id.healthCenterButton:
+		{
+			// TODO:进入健康中心
 			intent = new Intent();
 			intent.setClass(this, MedRegActivity.class);
 			startActivity(intent);
 		}
 			break;
-		case R.id.drugstoreButton:
+		case R.id.personalAssistantButton:
 		{
-			// 进入药店
+			// 进入个人助理
 			intent = new Intent();
-			intent.setClass(this, MedRoomActivity.class);
-			startActivity(intent);
 		}
 			break;
 		default:
 			break;
 		}
+	}
+	
+	//销毁时执行的函数
+	@Override
+	protected void onDestroy()
+	{
+		dataManage.closeDB();
+		super.onDestroy();
+		
+	}
+	
+	public void finish()
+	{		
+		super.finish();
 	}
 
 }

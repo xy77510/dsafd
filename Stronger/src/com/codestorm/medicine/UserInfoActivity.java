@@ -9,7 +9,6 @@
 package com.codestorm.medicine;
 
 import com.codestorm.medicine.model.HealthInfo;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -19,9 +18,10 @@ import android.view.WindowManager;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
-
 public class UserInfoActivity extends Activity implements OnClickListener
 {
+	enum Corporeity{平和型,气虚型,阴虚型,阳虚型,湿热型,气郁型,痰湿型,血瘀型,特禀型};
+	enum Age{儿童,中年,老年人,孕妇};
 	TextView mNameTextView;
 	TextView mAgeTextView;
 	TextView mSexTextView;
@@ -65,7 +65,7 @@ public class UserInfoActivity extends Activity implements OnClickListener
 	}
 	
 	private void loadData()
-	{
+	{   
 		HealthInfo healthInfo=HealthInfo.getHealthInfo();
 		mNameTextView.setText(healthInfo.name);
 		mAgeTextView.setText(String.valueOf(healthInfo.age));
@@ -77,15 +77,8 @@ public class UserInfoActivity extends Activity implements OnClickListener
 		{
 			mSexTextView.setText("男");
 		}
-		switch (healthInfo.corporeity)
-		{
-		case 0:
-			mPhysiqueTextView.setText("弱爆了！");
-			break;
+		mPhysiqueTextView.setText(healthInfo.getCorporeity());
 
-		default:
-			break;
-		}
 	}
 
 }

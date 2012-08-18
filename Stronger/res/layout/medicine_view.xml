@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
+    android:background="#66CCFF"
     android:baselineAligned="false"
     android:orientation="vertical" >
-
+
     <TextView
         android:id="@+id/medicineNameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="@string/loading"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#003399" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,14 +23,15 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/medicineid" />
+            android:text="@string/medicineid"
+            android:textColor="#003399" />
 
         <TextView
             android:id="@+id/idTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/loading" />
-
+            android:text="@string/loading"
+            android:textColor="#003399" />
     </LinearLayout>
 
     <LinearLayout
@@ -39,14 +42,15 @@
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/effect" />
+            android:text="@string/effect"
+            android:textColor="#003399" />
 
         <TextView
             android:id="@+id/effectTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/loading" />
-
+            android:text="@string/loading"
+            android:textColor="#003399" />
     </LinearLayout>
 
     <LinearLayout
@@ -57,14 +61,15 @@
             android:id="@+id/textView6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/taboo" />
+            android:text="@string/taboo"
+            android:textColor="#003399" />
 
         <TextView
             android:id="@+id/tabooTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/loading" />
-
+            android:text="@string/loading"
+            android:textColor="#003399" />
     </LinearLayout>
 
     <LinearLayout
@@ -75,14 +80,15 @@
             android:id="@+id/textView8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/manufacturer" />
+            android:text="@string/manufacturer"
+            android:textColor="#003399" />
 
         <TextView
             android:id="@+id/manufacturerTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/loading" />
-
+            android:text="@string/loading"
+            android:textColor="#003399" />
     </LinearLayout>
 
     <LinearLayout
@@ -93,20 +99,60 @@
             android:id="@+id/textView10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/promotion" />
+            android:text="@string/promotion"
+            android:textColor="#003399" />
 
         <TextView
             android:id="@+id/promotionTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/loading" />
-
+            android:text="@string/loading"
+            android:textColor="#003399" />
     </LinearLayout>
 
-    <Button
-        android:id="@+id/commentsButton"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/comments" />
-    
+        android:layout_height="match_parent" >
+
+        <Button
+            android:id="@+id/commentsButton"
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="5dp"
+             android:textColor="@drawable/textdrawble"
+android:background="@drawable/btndrawable"
+            android:text="@string/comments"
+            
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/srcButton"
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/commentsButton"
+             android:textColor="@drawable/textdrawble"
+android:background="@drawable/btndrawable"
+            android:text="@string/src"
+            
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/collectButton"
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@+id/srcButton"
+            android:layout_marginLeft="5dp"
+             android:textColor="@drawable/textdrawble"
+android:background="@drawable/btndrawable"
+            android:text="@string/collect"
+            
+            android:textSize="20dp" />
+
+    </RelativeLayout>
+
 </LinearLayout>
