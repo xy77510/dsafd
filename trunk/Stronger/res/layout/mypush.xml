@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#66CCFF" >
+
+    <Button
+        android:id="@+id/myMissionButton"
+        android:layout_width="130dp"
+        android:layout_height="80dp"
+        android:layout_alignParentLeft="true"
+         android:textColor="@drawable/textdrawble"
+android:background="@drawable/btndrawable"
+        android:text="@string/mymission"
+       
+        android:textSize="25dp" 
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="150dp"/>
+
+    <Button
+        android:id="@+id/myMedicinesButton"
+        android:layout_width="130dp"
+        android:layout_height="80dp"
+        android:layout_alignBaseline="@+id/myMissionButton"
+        android:layout_alignBottom="@+id/myMissionButton"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@+id/myMissionButton"
+         android:textColor="@drawable/textdrawble"
+android:background="@drawable/btndrawable"
+        android:text="@string/mymedicines"
+    
+        android:textSize="25dp" />
+
+</RelativeLayout>

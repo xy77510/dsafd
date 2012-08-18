@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:android1="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#66CCFF"
+    android1:orientation="vertical" >
+
+    <TextView
+        android1:id="@+id/textView1"
+        android1:layout_width="wrap_content"
+        android1:layout_height="wrap_content"
+        android1:layout_gravity="center_horizontal"
+        android:textColor="#003399"
+        android1:text="@string/collect_medical_history"
+        android1:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <CheckBox
+        android1:id="@+id/checkBox1"
+        android1:layout_width="wrap_content"
+        android1:layout_height="wrap_content"
+        android:textColor="#003399"
+        android1:text="@string/allergic" />
+
+    <CheckBox
+        android1:id="@+id/checkBox2"
+        android1:layout_width="wrap_content"
+        android1:layout_height="wrap_content"
+        android:textColor="#003399"
+        android1:text="@string/cardiopathy" />
+
+    <CheckBox
+        android1:id="@+id/checkBox3"
+        android1:layout_width="wrap_content"
+        android1:layout_height="wrap_content"
+        android:textColor="#003399"
+        android1:text="@string/hypertension" />
+
+    <CheckBox
+        android1:id="@+id/checkBox4"
+        android1:layout_width="wrap_content"
+        android1:layout_height="wrap_content"
+        android:textColor="#003399"
+        android1:text="@string/glycuresis" />
+
+    <Button
+        android1:id="@+id/commitButton"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android1:layout_gravity="center_horizontal"
+         android:textColor="@drawable/textdrawble"
+android:background="@drawable/btndrawable"
+        
+        android:textSize="20dp"
+        android1:text="@string/confirm" />
+
+</LinearLayout>
