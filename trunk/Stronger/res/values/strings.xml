@@ -5,19 +5,19 @@
 	<string name="physique">体质:</string>
 	<string name="userinfo">个人信息</string>
 	<string name="publicspace">公共空间</string>
-	<string name="news">定制中心</string>
+	<string name="mypush">我的推送</string>
 	<string name="assistant">私人助理</string>
-	<string name="heathcenter">健康中心</string>
-	<string name="drugstore">药房</string>	
-	<string name="getmed">药单取药</string>
-    <string name="custom">自定义取药</string>
+	<string name="healthcenter">健康中心</string>
+	<string name="information">资讯</string>	
+	<string name="mywant">我的定制</string>
+    <string name="personalassistant">个人助理</string>
     <string name="settle">结算</string>
     <string name="regoffice">科室选择</string>
     <string name="regconsult">咨询</string>
     <string name="regtest">体检</string>
-    <string name="user">用户名：</string>
+    <string name="mailbox">邮箱：</string>
     <string name="password">密码：</string>
-    <string name="inputuser">请输入用户名:</string>
+    <string name="inputmailbox">请输入邮箱:</string>
     <string name="inputpassword">请输入密码:</string>
     <string name="repassword">请再次输入密码:</string>
     <string name="confirm">确定</string>
@@ -59,9 +59,34 @@
    	<string name="input_newpassword">输入新密码：</string>
    	<string name="confirm_newpassword">再次输入新密码：</string>
    	<string name="mymission">我的任务</string>
-    <string name="missionover">任务完成</string>
-    <string name="physiquetest">中医体质测试</string>
-    <string name="fatrate">健康指数测试</string>
+    <string name="missionover">返回</string>
+    <string name="physiquetest">中医\n体质\n测试</string>
+    <string name="fatrate">健康\n指数\n测试</string>
     <string name="OK">OK</string>
     <string name="dialogContent"></string>
+    <string name="username">请输入昵称</string>
+    <string-array name="agearray">
+        <item>儿童(3-12)</item>
+        <item>青年中年(13-45)</item>
+        <item>老人(45-?)</item>
+        <item>孕妇</item>
+    </string-array>
+    <string-array name="sexarray">
+        <item>男</item>
+        <item>女</item>
+    </string-array>
+    <string name="next">继续</string>
+    <string name="collect_medical_history">采集病史</string>
+    <string name="allergic">过敏</string>
+    <string name="cardiopathy">心脏病</string>
+    <string name="hypertension">高血压</string>
+    <string name="glycuresis">糖尿病</string>
+    <string name="mymedicines">我的药物</string>
+    <string name="changeuser">修改用户信息</string>
+    <string name="option">软件设置</string>
+    <string name="remember_mail">记住邮箱</string>
+    <string name="remember_password">记住密码</string>
+    <string name="src">跳转到电商平台</string>
+    <string name="collect">收藏</string>
+    <string name="comment">发表评论</string>
 </resources>

@@ -1,104 +1,139 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:background="#66CCFF" >
 
     <Button
         android:id="@+id/headButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="120dp"
+        android:layout_height="70dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="39dp"
-        android:text="@string/head" />
+        android:layout_marginTop="30dp"
+         android:textColor="@drawable/textdrawble"
+android:background="@drawable/btndrawable"
+        android:text="@string/head"
+        android:textSize="20dp" />
 
     <Button
         android:id="@+id/noseButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="120dp"
+        android:layout_height="70dp"
         android:layout_alignLeft="@+id/headButton"
         android:layout_below="@+id/headButton"
-        android:layout_marginTop="18dp"
-        android:text="@string/nose" />
+        android:layout_marginTop="5dp"
+         android:textColor="@drawable/textdrawble"
+android:background="@drawable/btndrawable"
+        android:text="@string/nose"
+        android:textSize="20dp"/>
 
     <Button
         android:id="@+id/oralButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="120dp"
+        android:layout_height="70dp"
         android:layout_alignLeft="@+id/noseButton"
         android:layout_below="@+id/noseButton"
-        android:layout_marginTop="22dp"
-        android:text="@string/oral" />
+        android:layout_marginTop="5dp"
+         android:textColor="@drawable/textdrawble"
+android:background="@drawable/btndrawable"
+        android:text="@string/oral" 
+        android:textSize="20dp"/>
 
     <Button
         android:id="@+id/genitalButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="120dp"
+        android:layout_height="70dp"
         android:layout_alignLeft="@+id/oralButton"
         android:layout_below="@+id/oralButton"
-        android:layout_marginTop="18dp"
-        android:text="@string/genital" />
+        android:layout_marginTop="5dp"
+         android:textColor="@drawable/textdrawble"
+android:background="@drawable/btndrawable"
+        android:text="@string/genital"
+        android:textSize="20dp"/>
 
     <Button
         android:id="@+id/lowerlimbButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="120dp"
+        android:layout_height="70dp"
         android:layout_alignLeft="@+id/genitalButton"
         android:layout_below="@+id/genitalButton"
-        android:layout_marginTop="24dp"
-        android:text="@string/lowerlimb" />
+        android:layout_marginTop="5dp"
+         android:textColor="@drawable/textdrawble"
+android:background="@drawable/btndrawable"
+        android:text="@string/lowerlimb"
+        android:textSize="20dp"/>
 
     <Button
         android:id="@+id/eyeButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="120dp"
+        android:layout_height="70dp"
         android:layout_alignBaseline="@+id/headButton"
         android:layout_alignBottom="@+id/headButton"
         android:layout_alignParentRight="true"
-        android:layout_marginRight="60dp"
-        android:text="@string/eye" />
+        android:layout_marginRight="45dp"
+         android:textColor="@drawable/textdrawble"
+android:background="@drawable/btndrawable"
+        android:text="@string/eye"
+        android:textSize="20dp" />
 
     <Button
         android:id="@+id/earButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/noseButton"
-        android:layout_alignBottom="@+id/noseButton"
+        android:layout_width="120dp"
+        android:layout_height="70dp"
+        android:layout_above="@+id/oralButton"
         android:layout_alignLeft="@+id/eyeButton"
-        android:layout_marginLeft="22dp"
-        android:text="@string/ear" />
+ android:textColor="@drawable/textdrawble"
+android:background="@drawable/btndrawable"
+        android:text="@string/ear"
+        android:textSize="20dp"/>
 
     <Button
         android:id="@+id/neckButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="120dp"
+        android:layout_height="70dp"
+        android:layout_alignBaseline="@+id/oralButton"
+        android:layout_alignBottom="@+id/oralButton"
         android:layout_alignLeft="@+id/earButton"
-        android:layout_below="@+id/earButton"
-        android:text="@string/neck" />
+ android:textColor="@drawable/textdrawble"
+android:background="@drawable/btndrawable"
+        android:text="@string/neck"
+        android:textSize="20dp"/>
 
     <Button
         android:id="@+id/chestButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="120dp"
+        android:layout_height="70dp"
+        android:layout_above="@+id/lowerlimbButton"
         android:layout_alignLeft="@+id/neckButton"
-        android:layout_centerVertical="true"
-        android:text="@string/chest" />
+ android:textColor="@drawable/textdrawble"
+android:background="@drawable/btndrawable"
+        android:text="@string/chest"
+        android:textSize="20dp" />
 
     <Button
         android:id="@+id/skinButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="120dp"
+        android:layout_height="70dp"
+        android:layout_alignBaseline="@+id/lowerlimbButton"
+        android:layout_alignBottom="@+id/lowerlimbButton"
         android:layout_alignLeft="@+id/chestButton"
-        android:layout_below="@+id/genitalButton"
-        android:text="@string/skin" />
+ android:textColor="@drawable/textdrawble"
+android:background="@drawable/btndrawable"
+        android:text="@string/skin"
+        android:textSize="20dp"/>
 
     <Button
         android:id="@+id/wholebodyButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="120dp"
+        android:layout_height="70dp"
         android:layout_alignLeft="@+id/skinButton"
         android:layout_below="@+id/skinButton"
-        android:text="@string/wholebody" />
+        android:layout_marginTop="5dp"
+ android:textColor="@drawable/textdrawble"
+android:background="@drawable/btndrawable"
+        android:text="@string/wholebody"
+        android:textSize="20dp"/>
 
 </RelativeLayout>

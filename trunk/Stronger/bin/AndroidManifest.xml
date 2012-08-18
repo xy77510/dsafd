@@ -18,7 +18,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>        
         </activity>
-        <activity	android:name=".MedRoomActivity"    />
 		<activity  android:name=".MedRegActivity"      />
 		<activity  android:name=".RegisterActivity"      />
 		<activity  android:name=".LoginActivity"      />
@@ -34,6 +33,18 @@
 		<activity  android:name=".InformationActivity"/>
 		<activity  android:name=".ExamChooseActivity"/>
 		<activity  android:name=".PhysiqueActivity"/>
+		<activity android:name=".FirstLoginActivity"/>
+		<activity android:name=".CollectMedicalHistory"/>
+		<activity android:name=".MissionActivity"/>
+		<activity android:name=".MyPushActivity"/>
+		<activity android:name=".PushMedicineActivity"/>
+		<activity android:name=".OptionActivity"/>
+		<activity android:name=".ChangeUserInfoActivity"/>
+		<activity android:name=".MyInformationActivity"/>
+		<activity android:name=".MyCommentary"/>
+		<activity android:name=".CommentaryActivity"/>
+		<activity android:name=".CommentActivity"/>
+		<activity android:name=".MyMedicinesActivity"/>
     </application>
 
 </manifest>

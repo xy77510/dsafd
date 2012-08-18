@@ -10,6 +10,9 @@
 
 package com.codestorm.medicine;
 
+import com.codestorm.medicine.db.FileOperate;
+import com.codestorm.medicine.model.UserInfo;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -54,15 +57,21 @@ public class RegisterActivity extends Activity implements OnClickListener
 			String repasswordString = mRePsswordText.getText().toString();
 			if ("".equals(userString) || "".equals(passwordString) || "".equals(repasswordString))
 			{
-				Toast.makeText(this, "请填写完整", Toast.LENGTH_SHORT).show();
+				Toast.makeText(this, "输入不能为空！", Toast.LENGTH_SHORT).show();
 				return;
 			} else if (!passwordString.equals(repasswordString))
 			{
-				Toast.makeText(this, "两次密码不一致", Toast.LENGTH_LONG).show();
+				Toast.makeText(this, "两次密码不一致！", Toast.LENGTH_LONG).show();
 				return;
 			} else
 			{				
 				// TODO:注册过程
+				UserInfo userInfo=UserInfo.getUserInfo();
+				userInfo.mail=userString;
+				userInfo.userPassword=passwordString;
+				userInfo.userName=userString;
+				FileOperate.writeUser(this);
+				Toast.makeText(this, "注册成功！", Toast.LENGTH_LONG).show();
 				RegisterActivity.this.finish();
 			}
 

@@ -1,19 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:background="#66CCFF"
     android:orientation="vertical" >
 
     <Button
-        android:id="@+id/fatrateButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/fatrate" />
+        android:id="@+id/physiqueButton"
+        android:layout_width="140dp"
+        android:layout_height="100dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="138dp"
+        android:layout_marginLeft="20dp"
+         android:textColor="@drawable/textdrawble"
+android:background="@drawable/btndrawable"
+        android:text="@string/physiquetest"
+       
+        android:textSize="25dp" />
 
     <Button
-        android:id="@+id/physiqueButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/physiquetest" />
+        android:id="@+id/fatrateButton"
+        android:layout_width="140dp"
+        android:layout_height="100dp"
+        android:layout_alignBaseline="@+id/physiqueButton"
+        android:layout_alignBottom="@+id/physiqueButton"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@+id/physiqueButton"
+         android:textColor="@drawable/textdrawble"
+android:background="@drawable/btndrawable"
+        android:text="@string/fatrate"
+       
+        android:textSize="25dp" />
 
-</LinearLayout>
+</RelativeLayout>

@@ -6,14 +6,20 @@
  * 
  * 体检页面
  * 
+ * 2012-7-10
+ * 
+ * 郑泽（修改）
  * */
 package com.codestorm.medicine;
 
+import com.codestorm.medicine.db.FileOperate;
 import com.codestorm.medicine.model.HealthInfo;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -30,6 +36,9 @@ public class ExaminationActivity extends Activity implements OnClickListener
 	EditText mHeightEditText;
 	EditText mWeightEditText;
 	HealthInfo healthInfo;
+	Intent intent = new Intent();
+
+	private boolean judge;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
@@ -47,7 +56,13 @@ public class ExaminationActivity extends Activity implements OnClickListener
 		mHeightEditText = (EditText) findViewById(R.id.heighEditText);
 		mWeightEditText = (EditText) findViewById(R.id.weithtEditText);
 		healthInfo = HealthInfo.getHealthInfo();
-
+		if (healthInfo.firstLogin())
+		{
+			judge = true;
+		} else
+		{
+			judge = false;
+		}
 	}
 
 	public void onClick(View v)
@@ -66,39 +81,58 @@ public class ExaminationActivity extends Activity implements OnClickListener
 				healthInfo.height = Float.valueOf(mHeightEditText.getText().toString());
 				healthInfo.weight = Float.valueOf(mWeightEditText.getText().toString());
 				int index = countHealthScore();
-				String hint=new String();
+				String hint = new String();
 				switch (index)
 				{
 				case 0:
-					hint="过轻";
+					hint = "过轻";
+					if (!healthInfo.corporeitysList.contains("瘦"))
+						healthInfo.corporeitysList.add("瘦");
 					break;
 				case 1:
-					hint="理想体重";
+					hint = "理想体重";
+					if (!healthInfo.corporeitysList.contains("标准"))
+						healthInfo.corporeitysList.add("标准");
 					break;
 				case 2:
-					hint="过重";
+					hint = "过重";
+					if (!healthInfo.corporeitysList.contains("肥胖"))
+						healthInfo.corporeitysList.add("肥胖");
 					break;
 				case 3:
-					hint="肥胖（第一度）";
+					hint = "肥胖（第一度）";
+					if (!healthInfo.corporeitysList.contains("肥胖"))
+						healthInfo.corporeitysList.add("肥胖");
 					break;
 				case 4:
-					hint="肥胖（第二度）";
+					hint = "肥胖（第二度）";
+					if (!healthInfo.corporeitysList.contains("肥胖"))
+						healthInfo.corporeitysList.add("肥胖");
 					break;
 				case 5:
-					hint="肥胖（第三度）";
+					hint = "肥胖（第三度）";
+					if (!healthInfo.corporeitysList.contains("肥胖"))
+						healthInfo.corporeitysList.add("肥胖");
 					break;
 				default:
 					break;
 				}
-//				NumberFormat numberFormat = new DecimalFormat("###.0");
+				// NumberFormat numberFormat = new DecimalFormat("###.0");
 				AlertDialog.Builder builder = new AlertDialog.Builder(this);
-				builder.setMessage("您的体型："+hint+"!");
+				final Context context = this;
+				builder.setMessage("您的体型：" + hint + "!");
 				builder.setPositiveButton("确定", new DialogInterface.OnClickListener()
 				{
 
 					public void onClick(DialogInterface dialog, int which)
 					{
 						dialog.cancel();
+						FileOperate.writeHealthInfo(ExaminationActivity.this);
+						if (judge)
+						{
+							intent.setClass(context, PersonCenter.class);
+							startActivity(intent);
+						}
 						ExaminationActivity.this.finish();
 					}
 				});

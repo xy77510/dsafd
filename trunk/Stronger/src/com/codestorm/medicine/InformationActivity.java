@@ -7,12 +7,15 @@ package com.codestorm.medicine;
  * */
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
-import com.codestorm.medicine.model.TempInformation;
+import com.codestorm.medicine.model.Information;
+import com.codestorm.medicine.server.AnologServer;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -24,8 +27,7 @@ import android.widget.SimpleAdapter;
 
 public class InformationActivity extends Activity implements OnClickListener
 {
-	TempInformation information1 = new TempInformation("1", "测试1", "测试资讯1", "测试资讯1"); // 测试资讯1，测试后删除
-	TempInformation information2 = new TempInformation("2", "测试2", "测试资讯2", "测试资讯2"); // 测试资讯2,测试后删除
+	List<Information> informations=AnologServer.getNews(this);
 	Intent intent = new Intent();
 
 	public void onCreate(Bundle savedInstanceState)
@@ -34,17 +36,22 @@ public class InformationActivity extends Activity implements OnClickListener
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		setContentView(R.layout.listview);
-		ListView mListView = (ListView) findViewById(R.id.listView);
+		ListView mListView = (ListView) findViewById(R.id.ListView);
+		if(informations==null)
+		{
+			Log.i("ED", "information null");
+		}
+		
 		ArrayList<HashMap<String, Object>> mlist = new ArrayList<HashMap<String, Object>>();
 		// TODO 将资讯加入到资讯列表中
-		HashMap<String, Object> map = new HashMap<String, Object>();
-		map.put("infoTitleTextView", information1.text);
-		map.put("infosummaryTextView", information1.summary);
-		mlist.add(map);
-		map = new HashMap<String, Object>();
-		map.put("infoTitleTextView", information2.text);
-		map.put("infosummaryTextView", information2.summary);
-		mlist.add(map);
+		for (Information information : informations)
+		{
+			HashMap<String, Object> map = new HashMap<String, Object>();
+			map.put("infoTitleTextView", information.title);
+			map.put("infosummaryTextView", information.text);
+			mlist.add(map);
+		}
+
 		SimpleAdapter mSimpleAdapter = new SimpleAdapter(this, mlist, R.xml.informationlist, new String[]
 		{ "infoTitleTextView", "infosummaryTextView" }, new int[]
 		{ R.id.infoTitleTextView, R.id.infosummaryTextView });
@@ -55,14 +62,11 @@ public class InformationActivity extends Activity implements OnClickListener
 			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3)
 			{
 				// TODO 选择资讯
-				switch (arg2)
+				Information.setInformation(arg2);
+				if (Information.information != null)
 				{
-				case 0:
-					;
-					break;
-
-				default:
-					break;
+					intent.setClass(InformationActivity.this, MyInformationActivity.class);
+					startActivity(intent);
 				}
 			}
 		});

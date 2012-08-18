@@ -38,14 +38,6 @@
         android:layout_marginRight="10dip"
         android:paddingLeft="10dip"
         android:paddingRight="10dip">
-
-        <Button
-            android:id="@+id/dialogButtonOk"
-            android:layout_width="100dip"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:text="@string/OK" />
 
         <ImageView
             android:id="@+id/dialogTitleImage"
@@ -55,6 +47,24 @@
             android:layout_centerVertical="true"
             android:layout_marginRight="10dp"
             android:background="@drawable/elfin2" />
+
+        <Button
+            android:id="@+id/dialogButtonOk"
+            android:layout_width="100dip"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="@string/OK" />
+
+        <Button
+            android:id="@+id/reButton"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/dialogTitleImage"
+            android:text="@string/retest" />
+
     </RelativeLayout>
 
 </LinearLayout>

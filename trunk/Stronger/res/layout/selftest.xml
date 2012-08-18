@@ -1,27 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:background="#66CCFF" >
 
     <Button
         android:id="@+id/yesButton"
         android:layout_width="100dp"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_marginBottom="150dp"
         android:layout_marginLeft="47dp"
-        android:text="@string/yes" />
+        android:background="@drawable/btndrawable"
+        android:text="@string/yes"
+        android:textColor="@drawable/textdrawble"
+        android:textSize="20dp" />
 
     <Button
         android:id="@+id/noButton"
         android:layout_width="100dp"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_alignBaseline="@+id/yesButton"
         android:layout_alignBottom="@+id/yesButton"
         android:layout_marginLeft="30dp"
         android:layout_toRightOf="@+id/yesButton"
-        android:text="@string/no" />
+        android:background="@drawable/btndrawable"
+        android:text="@string/no"
+        android:textColor="@drawable/textdrawble"
+        android:textSize="20dp" />
+
     <TextView
         android:id="@+id/questionTextView"
         android:layout_width="wrap_content"
@@ -29,26 +37,31 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="46dp"/>
-    
+        android:layout_marginTop="46dp"
+        android:textColor="#003399" />
+
     <Button
         android:id="@+id/reTestButton"
         android:layout_width="100dp"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_alignBaseline="@+id/yesButton"
         android:layout_alignBottom="@+id/yesButton"
         android:layout_alignLeft="@+id/yesButton"
-        android:text="@string/retest" 
-        android:visibility="invisible"/>
+        android:background="@drawable/btndrawable"
+        android:text="@string/retest"
+        android:textColor="@drawable/textdrawble"
+        android:visibility="invisible" />
 
     <Button
         android:id="@+id/pushButton"
         android:layout_width="100dp"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_alignBaseline="@+id/noButton"
         android:layout_alignBottom="@+id/noButton"
         android:layout_alignLeft="@+id/noButton"
-        android:text="@string/pushmedicines" 
-        android:visibility="invisible"/>
+        android:background="@drawable/btndrawable"
+        android:text="@string/pushmedicines"
+        android:textColor="@drawable/textdrawble"
+        android:visibility="invisible" />
 
 </RelativeLayout>

@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:baselineAligned="false"
-    android:orientation="vertical" >
+    android:orientation="vertical" 
+    android:background="#66CCFF">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="@string/userinfo"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:textAppearance="?android:attr/textAppearanceLarge" 
+        android:textColor="#003399"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,13 +22,15 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/name" />
+            android:text="@string/name" 
+            android:textColor="#003399"/>
 
         <TextView
             android:id="@+id/nameTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/loading" />
+            android:text="@string/loading" 
+            android:textColor="#003399"/>
 
     </LinearLayout>
 
@@ -38,13 +42,15 @@
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/age" />
+            android:text="@string/age" 
+            android:textColor="#003399"/>
 
         <TextView
             android:id="@+id/ageTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/loading" />
+            android:text="@string/loading"
+            android:textColor="#003399" />
 
     </LinearLayout>
 
@@ -56,13 +62,15 @@
             android:id="@+id/textView6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/sex" />
+            android:text="@string/sex" 
+            android:textColor="#003399"/>
 
         <TextView
             android:id="@+id/sexTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/loading" />
+            android:text="@string/loading" 
+            android:textColor="#003399"/>
 
     </LinearLayout>
     
@@ -74,13 +82,15 @@
             android:id="@+id/textView8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/physique" />
+            android:text="@string/physique" 
+            android:textColor="#003399"/>
 
         <TextView
             android:id="@+id/physiqueTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/loading" />
+            android:text="@string/loading"
+            android:textColor="#003399" />
 
     </LinearLayout>
     <Button

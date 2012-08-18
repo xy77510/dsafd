@@ -9,6 +9,6 @@
         android:layout_width="fill_parent"
         android:layout_height="0dip"
         android:layout_weight="0.12"
-         />
+        android:textColor="#003399" />
 
 </LinearLayout>
